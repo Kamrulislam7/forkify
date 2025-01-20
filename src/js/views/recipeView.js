@@ -1,6 +1,6 @@
-import { Fraction } from 'fractional';
 import icons from 'url:../../../src/img/icons.svg';
 import { View } from './View';
+import fracty from 'fracty';
 class RecipiView extends View {
   _parentEle = document.querySelector('.recipe');
   _errorMsg = 'No data found ! Problem';
@@ -131,7 +131,7 @@ class RecipiView extends View {
           <use href="${icons}#icon-check"></use>
         </svg>
         <div class="recipe__quantity">${
-          ing.quantity ? new Fraction(ing.quantity).toString() : ''
+          ing.quantity ? new fracty(ing.quantity).toString() : ''
         }</div>
         <div class="recipe__description">
           <span class="recipe__unit">${ing.unit}</span>
